@@ -1,39 +1,38 @@
 import java.util.Scanner;
+public class TimeConversion {
+  public static void main(String[] args) {
+  Scanner scanner = new Scanner(System.in);
+  System.out.print("Enter the time in minutes: ");
+  int totalMinutes = scanner.nextInt();
+  int hours = totalMinutes / 60;
+  int minutes = totalMinutes % 60;
+  System.out.printf("The time is: %d:%02d\n", hours, minutes);
+  }
+}
+// Exercise 10: Sleep Calculation
 
-import javax.swing.JOptionPane;
-
-public class main {
-  public static int appNumber;
-  public static final double PI = 3.14;
-  
-    public static void main(String[]args) {
-      
-      Scanner scanner = new Scanner(System.in);
-      System.out.println("Which app would you like to preview");
-      appNumber = scanner.nextInt();
-      
-      switch (appNumber) {
-        case 0:
-          System.out.println("Enter the amount of poles: ");
-          int numOfPoles = scanner.nextInt();
-          double calc1 =(( PI*Math.pow(1.5, 2)*5)*numOfPoles)/7;
-          System.out.println("You need "+calc1+" cubic yards of concrete");
-          break;
-
-        case 1:
-          System.out.println("Enter m: ");
-          int m = scanner.nextInt();
-          System.out.println("Enter n: ");
-          int n = scanner.nextInt();
-
-          double sideOne = Math.pow(m, 2) - Math.pow(n, 2);
-          double sideTwo =(n*m)*2;
-          double hypotenuse = Math.pow(m, 2) + Math.pow(n, 2);
-          double cost = (2.412*sideOne)+(3.767*sideTwo)+ (15.758*hypotenuse);
-          System.out.println("Your tripple is "+ sideOne+","+sideTwo+","+hypotenuse+" and your cost is "+cost);
-          break;
-      }
-      
-    }
-    
+public class Sleep {
+  public static void main(String[] args) {
+  Scanner scanner = new Scanner(System.in);
+  System.out.println("Enter your birthdate:");
+  System.out.print("Year: ");
+  int birthYear = scanner.nextInt();
+  System.out.print("Month: ");
+  int birthMonth = scanner.nextInt();
+  System.out.print("Day: ");
+  int birthDay = scanner.nextInt();
+  // Prompt user for current date
+  System.out.println("Enter today's date:");
+  System.out.print("Year: ");
+  int currentYear = scanner.nextInt();
+  System.out.print("Month: ");
+  int currentMonth = scanner.nextInt();
+  System.out.print("Day: ");
+  int currentDay = scanner.nextInt();
+  int totalDays = ((currentYear - birthYear) * 365) + ((currentMonth -
+  birthMonth) * 30) + (currentDay - birthDay);
+  int sleepHours = totalDays * 8;
+  System.out.println("You have been alive for " + totalDays + " days.");
+  System.out.println("You have slept " + sleepHours + " hours.");
+  }
 }
